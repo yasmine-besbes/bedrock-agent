@@ -17,3 +17,11 @@ MODEL_CONFIG = {
     "temperature": 0.7,
     "max_tokens": 1000,
 }
+# Paramètres de recherche
+SEARCH_CONFIG = {
+    "max_results": 5,       # Nombre de résultats à retourner
+    "region": "fr-fr",      # Région pour les résultats DuckDuckGo
+}
+
+# Clé Tavily (optionnel - laisser vide si tu utilises DuckDuckGo)
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")

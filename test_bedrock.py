@@ -4,12 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# ══════════════════════════════════════════════════
-# REMPLACE PAR LES MODEL IDs COPIÉS À L'ÉTAPE 6
-# ══════════════════════════════════════════════════
+
 CLAUDE_MODEL_ID = "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
 LLAMA_MODEL_ID  = "meta.llama3-8b-instruct-v1:0"
-# ══════════════════════════════════════════════════
+
 
 
 def test_claude(client):
