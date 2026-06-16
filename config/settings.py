@@ -25,3 +25,10 @@ SEARCH_CONFIG = {
 
 # Clé Tavily (optionnel - laisser vide si tu utilises DuckDuckGo)
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
+# Base de données
+DB_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "data",
+    "entreprise.db"
+)
+DATABASE_URL = f"sqlite:///{DB_PATH}"
