@@ -32,3 +32,7 @@ DB_PATH = os.path.join(
     "entreprise.db"
 )
 DATABASE_URL = f"sqlite:///{DB_PATH}"
+
+# API Météo (Open-Meteo - gratuit, sans clé API)
+WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast"
+GEOCODING_API_URL = "https://geocoding-api.open-meteo.com/v1/search"
