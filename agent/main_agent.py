@@ -19,7 +19,10 @@ from tools.weather_tool import obtenir_meteo, obtenir_prevision_meteo
 
 from langgraph.checkpoint.memory import InMemorySaver
 
-
+from langgraph.errors import GraphRecursionError
+# Limite d'itérations pour éviter les boucles infinies (équivalent max_iterations)
+MAX_ITERATIONS = 10
+RECURSION_LIMIT = MAX_ITERATIONS * 2 + 1  # LangGraph compte chaque étape (action + observation)
 # ════════════════════════════════════════════════════
 # CONFIGURATION DU LOGGING
 # ════════════════════════════════════════════════════
@@ -60,14 +63,24 @@ Tu as accès à plusieurs outils :
 - recherche_web : pour trouver des informations récentes sur internet
 - interroger_base_de_donnees / executer_sql : pour les données internes de l'entreprise (employés, projets, ventes)
 - obtenir_meteo / obtenir_prevision_meteo : pour la météo d'une ville
-- obtenir_cours_action / comparer_actions / obtenir_historique_action : pour les cours de bourse
 
 RÈGLES DE RAISONNEMENT :
 1. Décompose chaque requête complexe en sous-tâches claires.
 2. Utilise plusieurs outils l'un après l'autre si nécessaire pour répondre complètement.
 3. Ne réponds jamais de mémoire pour des données factuelles, récentes ou internes — utilise toujours l'outil approprié.
-4. Si une information manque pour utiliser un outil, demande une clarification.
-5. Formule toujours une réponse finale claire et synthétique en français.
+4. Si une information manque pour utiliser un outil, demande une clarification au lieu d'essayer plusieurs fois.
+
+RÈGLES STRICTES ANTI-BOUCLE (TRÈS IMPORTANT) :
+5. N'appelle JAMAIS le même outil avec EXACTEMENT les mêmes paramètres plus d'une fois.
+6. Si un outil retourne une erreur ou un résultat vide, NE RÉESSAIE PAS la même requête.
+   Formule immédiatement une réponse finale expliquant le problème à l'utilisateur.
+7. Si après 2 tentatives avec un outil tu n'obtiens pas l'information souhaitée,
+   ARRÊTE d'utiliser cet outil et donne une réponse finale avec les informations
+   disponibles, même partielles.
+8. Tu DOIS toujours te terminer par une réponse finale claire en français.
+   Ne jamais laisser une conversation sans réponse finale.
+9. Si tu sens que tu tournes en rond ou répètes la même action, arrête-toi
+   immédiatement et explique à l'utilisateur ce qui s'est passé.
 """
 
 
@@ -131,7 +144,7 @@ def log_etapes_raisonnement(messages):
             logger.info(f"  OBSERVATION    → {contenu[:200]}")
 
 
-def executer_requete(agent, question: str, thread_id: str = "default") -> str:
+def executer_requete1(agent, question: str, thread_id: str = "default") -> str:
     """
     Exécute une requête sur l'agent en conservant la mémoire de la conversation.
     Le thread_id identifie une conversation unique (ex: un utilisateur ou une session).
@@ -156,6 +169,65 @@ def executer_requete(agent, question: str, thread_id: str = "default") -> str:
     logger.info("=" * 60 + "\n")
 
     return reponse_finale
+
+def executer_requete(agent, question: str, thread_id: str = "default") -> str:
+    """
+    Exécute une requête sur l'agent avec une limite stricte d'itérations
+    pour éviter les boucles infinies (équivalent max_iterations).
+    """
+    logger.info("=" * 60)
+    logger.info(f"NOUVELLE REQUÊTE [thread: {thread_id}] : {question}")
+    logger.info("=" * 60)
+
+    config = {
+        "configurable": {"thread_id": thread_id},
+        "recursion_limit": RECURSION_LIMIT     # ← Limite anti-boucle infinie
+    }
+
+    try:
+        resultat = agent.invoke(
+            {"messages": [HumanMessage(content=question)]},
+            config=config
+        )
+
+        messages = resultat["messages"]
+        log_etapes_raisonnement(messages)
+
+        reponse_finale = messages[-1].content
+
+        # Sécurité supplémentaire : si la réponse finale est vide
+        if not reponse_finale or len(reponse_finale.strip()) == 0:
+            reponse_finale = (
+                "Je n'ai pas pu formuler de réponse complète. "
+                "Pouvez-vous reformuler votre question ?"
+            )
+            logger.warning("Réponse finale vide détectée — message de secours utilisé")
+
+        logger.info(f"RÉPONSE FINALE : {reponse_finale}")
+        logger.info("=" * 60 + "\n")
+
+        return reponse_finale
+
+    except GraphRecursionError:
+        # L'agent a dépassé la limite d'itérations → boucle infinie détectée
+        message_erreur = (
+            "Je n'ai pas pu obtenir de réponse définitive après plusieurs tentatives "
+            "(limite d'itérations atteinte). Cela peut arriver si la question est trop "
+            "complexe ou si un outil ne répond pas correctement. "
+            "Essayez de reformuler votre question de façon plus simple."
+        )
+        logger.error(
+            f"BOUCLE INFINIE DÉTECTÉE — limite de {MAX_ITERATIONS} itérations atteinte "
+            f"pour la question : {question}"
+        )
+        logger.info("=" * 60 + "\n")
+        return message_erreur
+
+    except Exception as e:
+        message_erreur = f"Une erreur inattendue s'est produite : {str(e)}"
+        logger.error(f"ERREUR : {e}")
+        logger.info("=" * 60 + "\n")
+        return message_erreur
 
 
 if __name__ == "__main__":
