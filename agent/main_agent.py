@@ -23,6 +23,8 @@ from langgraph.errors import GraphRecursionError
 # Limite d'itérations pour éviter les boucles infinies (équivalent max_iterations)
 MAX_ITERATIONS = 10
 RECURSION_LIMIT = MAX_ITERATIONS * 2 + 1  # LangGraph compte chaque étape (action + observation)
+
+from agent.dynamodb_checkpointer import DynamoDBSaver
 # ════════════════════════════════════════════════════
 # CONFIGURATION DU LOGGING
 # ════════════════════════════════════════════════════
@@ -105,7 +107,8 @@ def create_main_agent():
     ]
 
     # ─── Mémoire conversationnelle ───
-    memory = InMemorySaver()
+    #memory = InMemorySaver()
+    memory = DynamoDBSaver()
 
     agent = create_agent(
         model=llm,
@@ -136,12 +139,12 @@ def log_etapes_raisonnement(messages):
             # Si l'IA a un contenu textuel (réflexion ou réponse finale)
             if msg.content:
                 contenu = msg.content if isinstance(msg.content, str) else str(msg.content)
-                logger.info(f"  THOUGHT/RÉPONSE → {contenu[:200]}")
+                logger.info(f"  THOUGHT/RÉPONSE → {contenu}")
 
         elif isinstance(msg, ToolMessage):
             # Résultat retourné par l'outil
             contenu = msg.content if isinstance(msg.content, str) else str(msg.content)
-            logger.info(f"  OBSERVATION    → {contenu[:200]}")
+            logger.info(f"  OBSERVATION    → {contenu}")
 
 
 def executer_requete1(agent, question: str, thread_id: str = "default") -> str:

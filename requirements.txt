@@ -38,6 +38,7 @@ langgraph==1.2.5
 langgraph-checkpoint==4.1.1
 langgraph-prebuilt==1.1.0
 langgraph-sdk==0.4.2
+langgraph_checkpoint_dynamodb==0.1.0
 langsmith==0.8.15
 lxml==6.1.1
 multidict==6.7.1

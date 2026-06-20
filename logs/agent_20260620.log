@@ -355,3 +355,91 @@ Il fait donc beau et chaud à Tunis avec un ci
 Il fait donc beau et chaud à Tunis avec un ciel bien dégagé !
 2026-06-20 15:55:53,634 | INFO | ============================================================
 
+2026-06-20 16:21:04,387 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:21:04,387 | INFO | ============================================================
+2026-06-20 16:21:04,387 | INFO | NOUVELLE REQUÊTE [thread: test_persistance_dynamo] : Mon prénom est Khalil et ma ville préférée est Sousse.
+2026-06-20 16:21:04,387 | INFO | ============================================================
+2026-06-20 16:21:09,959 | INFO |   THOUGHT/RÉPONSE → Bonjour Khalil ! Enchanté de faire votre connaissance. 
+
+C'est un plaisir de savoir que Sousse est votre ville préférée ! Sousse est une magnifique ville côtière de Tunisie, connue pour sa médina clas
+2026-06-20 16:21:09,959 | INFO | RÉPONSE FINALE : Bonjour Khalil ! Enchanté de faire votre connaissance. 
+
+C'est un plaisir de savoir que Sousse est votre ville préférée ! Sousse est une magnifique ville côtière de Tunisie, connue pour sa médina classée au patrimoine mondial de l'UNESCO, ses belles plages méditerranéennes, et son riche patrimoine historique.
+
+J'ai bien noté ces informations. Y a-t-il quelque chose que je puisse faire pour vous aujourd'hui ? Je peux par exemple :
+- Vous donner la météo actuelle à Sousse
+- Rechercher des informations récentes sur la ville
+- Vous aider avec des questions sur des données d'entreprise
+- Ou toute autre demande que vous pourriez avoir
+
+N'hésitez pas à me solliciter ! 😊
+2026-06-20 16:21:09,959 | INFO | ============================================================
+
+2026-06-20 16:21:10,868 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:21:10,868 | INFO | ============================================================
+2026-06-20 16:21:10,868 | INFO | NOUVELLE REQUÊTE [thread: test_redemarrage] : Retiens que mon projet préféré est l'Agent IA Bedrock.
+2026-06-20 16:21:10,883 | INFO | ============================================================
+2026-06-20 16:21:14,976 | INFO |   THOUGHT/RÉPONSE → Parfait ! J'ai bien noté que votre projet préféré est l'**Agent IA Bedrock**. 
+
+Je garde cette information en mémoire pour notre conversation actuelle. Si vous avez besoin de renseignements sur ce pro
+2026-06-20 16:21:14,976 | INFO | RÉPONSE FINALE : Parfait ! J'ai bien noté que votre projet préféré est l'**Agent IA Bedrock**. 
+
+Je garde cette information en mémoire pour notre conversation actuelle. Si vous avez besoin de renseignements sur ce projet (statut, budget, responsable, etc.) ou si vous souhaitez que je fasse quelque chose en lien avec cette information, n'hésitez pas à me le demander ! 😊
+2026-06-20 16:21:14,976 | INFO | ============================================================
+
+2026-06-20 16:21:15,165 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:21:15,165 | INFO | ============================================================
+2026-06-20 16:21:15,165 | INFO | NOUVELLE REQUÊTE [thread: test_redemarrage] : Quel est mon projet préféré ?
+2026-06-20 16:21:15,165 | INFO | ============================================================
+2026-06-20 16:21:15,761 | ERROR | ERREUR : 'checkpoint_data'
+2026-06-20 16:21:15,761 | INFO | ============================================================
+
+2026-06-20 16:29:16,054 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:29:16,054 | INFO | ============================================================
+2026-06-20 16:29:16,054 | INFO | NOUVELLE REQUÊTE [thread: test_persistance_dynamo] : Mon prénom est Khalil et ma ville préférée est Sousse.
+2026-06-20 16:29:16,054 | INFO | ============================================================
+2026-06-20 16:29:21,289 | INFO |   THOUGHT/RÉPONSE → Enchanté Khalil ! C'est un plaisir de faire votre connaissance. 
+
+Sousse est un excellent choix de ville préférée ! Cette magnifique ville côtière tunisienne est connue pour sa médina classée au patri
+2026-06-20 16:29:21,289 | INFO | RÉPONSE FINALE : Enchanté Khalil ! C'est un plaisir de faire votre connaissance. 
+
+Sousse est un excellent choix de ville préférée ! Cette magnifique ville côtière tunisienne est connue pour sa médina classée au patrimoine mondial de l'UNESCO, ses belles plages sur la Méditerranée, son histoire riche et son ambiance chaleureuse.
+
+Y a-t-il quelque chose que je puisse faire pour vous aujourd'hui ? Je peux par exemple :
+- Vous donner la météo actuelle à Sousse
+- Rechercher des informations sur la ville
+- Vous aider avec des données d'entreprise
+- Ou répondre à toute autre question que vous pourriez avoir
+
+N'hésitez pas à me solliciter ! 😊
+2026-06-20 16:29:21,289 | INFO | ============================================================
+
+2026-06-20 16:29:22,234 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:29:22,234 | INFO | ============================================================
+2026-06-20 16:29:22,234 | INFO | NOUVELLE REQUÊTE [thread: test_redemarrage] : Retiens que mon projet préféré est l'Agent IA Bedrock.
+2026-06-20 16:29:22,234 | INFO | ============================================================
+2026-06-20 16:29:27,749 | INFO |   THOUGHT/RÉPONSE → J'ai bien noté que votre projet préféré est l'**Agent IA Bedrock**. 
+
+Cependant, je dois vous informer que je n'ai pas de mémoire persistante entre nos conversations. Cela signifie que je ne pourrai p
+2026-06-20 16:29:27,749 | INFO | RÉPONSE FINALE : J'ai bien noté que votre projet préféré est l'**Agent IA Bedrock**. 
+
+Cependant, je dois vous informer que je n'ai pas de mémoire persistante entre nos conversations. Cela signifie que je ne pourrai pas me souvenir de cette information lors de nos prochains échanges ou si vous commencez une nouvelle session.
+
+Pour le moment, pendant cette conversation actuelle, je garderai cette information en tête. Si vous avez besoin que je fasse quelque chose avec cette information (par exemple, rechercher des détails sur ce projet dans la base de données de l'entreprise, ou toute autre action), n'hésitez pas à me le demander !
+2026-06-20 16:29:27,749 | INFO | ============================================================
+
+2026-06-20 16:29:27,951 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 16:29:27,951 | INFO | ============================================================
+2026-06-20 16:29:27,951 | INFO | NOUVELLE REQUÊTE [thread: test_redemarrage] : Quel est mon projet préféré ?
+2026-06-20 16:29:27,951 | INFO | ============================================================
+2026-06-20 16:29:32,101 | INFO |   THOUGHT/RÉPONSE → J'ai bien noté que votre projet préféré est l'**Agent IA Bedrock**. 
+
+Cependant, je dois vous informer que je n'ai pas de mémoire persistante entre nos conversations. Cela signifie que je ne pourrai p
+2026-06-20 16:29:32,103 | INFO |   THOUGHT/RÉPONSE → Votre projet préféré est l'**Agent IA Bedrock**, comme vous me l'avez indiqué juste avant.
+
+Je peux garder cette information en mémoire pendant notre conversation actuelle, mais elle sera perdue une f
+2026-06-20 16:29:32,103 | INFO | RÉPONSE FINALE : Votre projet préféré est l'**Agent IA Bedrock**, comme vous me l'avez indiqué juste avant.
+
+Je peux garder cette information en mémoire pendant notre conversation actuelle, mais elle sera perdue une fois que notre session se terminera. Si vous souhaitez que je recherche des informations sur ce projet dans la base de données de l'entreprise (budget, statut, responsable, etc.), je peux le faire pour vous !
+2026-06-20 16:29:32,103 | INFO | ============================================================
+
