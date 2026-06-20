@@ -32,3 +32,268 @@ Il fait donc assez chaud avec un temps ensoleillé et une faible humidité.
 2026-06-20 15:13:15,514 | INFO | ============================================================
 
 2026-06-20 15:13:15,808 | INFO | Agent créé avec 5 outils disponibles
+2026-06-20 15:28:45,839 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:28:45,840 | INFO | ============================================================
+2026-06-20 15:28:45,840 | INFO | NOUVELLE REQUÊTE [thread: test_memoire_1] : Mon nom est yasmine et je travaille chez SMARTOVATE.
+2026-06-20 15:28:45,840 | INFO | ============================================================
+2026-06-20 15:28:49,371 | INFO |   THOUGHT/RÉPONSE → Bonjour Yasmine ! Ravie de faire votre connaissance. 
+
+Je suis là pour vous aider avec diverses tâches concernant SMARTOVATE ou d'autres besoins :
+
+- **Informations sur l'entreprise** : données sur le
+2026-06-20 15:28:49,371 | INFO | RÉPONSE FINALE : Bonjour Yasmine ! Ravie de faire votre connaissance. 
+
+Je suis là pour vous aider avec diverses tâches concernant SMARTOVATE ou d'autres besoins :
+
+- **Informations sur l'entreprise** : données sur les employés, projets, ventes, etc.
+- **Recherches web** : informations actuelles et récentes
+- **Météo** : conditions climatiques et prévisions
+- **Et bien plus encore**
+
+Comment puis-je vous aider aujourd'hui ? 😊
+2026-06-20 15:28:49,371 | INFO | ============================================================
+
+2026-06-20 15:28:49,371 | INFO | ============================================================
+2026-06-20 15:28:49,377 | INFO | NOUVELLE REQUÊTE [thread: test_memoire_1] : Quel est mon nom et où je travaille ?
+2026-06-20 15:28:49,377 | INFO | ============================================================
+2026-06-20 15:28:52,503 | INFO |   THOUGHT/RÉPONSE → Bonjour Yasmine ! Ravie de faire votre connaissance. 
+
+Je suis là pour vous aider avec diverses tâches concernant SMARTOVATE ou d'autres besoins :
+
+- **Informations sur l'entreprise** : données sur le
+2026-06-20 15:28:52,503 | INFO |   THOUGHT/RÉPONSE → Votre nom est **Yasmine** et vous travaillez chez **SMARTOVATE**. 😊
+
+C'est ce que vous m'avez indiqué au début de notre conversation. Y a-t-il quelque chose que je puisse faire pour vous concernant SM
+2026-06-20 15:28:52,503 | INFO | RÉPONSE FINALE : Votre nom est **Yasmine** et vous travaillez chez **SMARTOVATE**. 😊
+
+C'est ce que vous m'avez indiqué au début de notre conversation. Y a-t-il quelque chose que je puisse faire pour vous concernant SMARTOVATE ou autre chose ?
+2026-06-20 15:28:52,503 | INFO | ============================================================
+
+2026-06-20 15:28:52,760 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:28:52,760 | INFO | ============================================================
+2026-06-20 15:28:52,760 | INFO | NOUVELLE REQUÊTE [thread: test_anaphore_1] : Quelle est la météo à Tunis ?
+2026-06-20 15:28:52,760 | INFO | ============================================================
+2026-06-20 15:28:58,880 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_meteo
+2026-06-20 15:28:58,882 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis'}
+2026-06-20 15:28:58,882 | INFO |   OBSERVATION    → Météo actuelle à Tunis, Tunisie :
+- Conditions : Ciel dégagé
+- Température : 34.2°C
+- Humidité : 31%
+- Vent : 18.8 km/h
+2026-06-20 15:28:58,882 | INFO |   THOUGHT/RÉPONSE → Voici la météo actuelle à Tunis, en Tunisie :
+
+🌞 **Conditions** : Ciel dégagé  
+🌡️ **Température** : 34,2°C  
+💧 **Humidité** : 31%  
+💨 **Vent** : 18,8 km/h  
+
+Il fait donc assez chaud avec un ciel bie
+2026-06-20 15:28:58,882 | INFO | RÉPONSE FINALE : Voici la météo actuelle à Tunis, en Tunisie :
+
+🌞 **Conditions** : Ciel dégagé  
+🌡️ **Température** : 34,2°C  
+💧 **Humidité** : 31%  
+💨 **Vent** : 18,8 km/h  
+
+Il fait donc assez chaud avec un ciel bien dégagé et une faible humidité. N'oubliez pas de vous hydrater si vous sortez ! 😊
+2026-06-20 15:28:58,882 | INFO | ============================================================
+
+2026-06-20 15:28:58,882 | INFO | ============================================================
+2026-06-20 15:28:58,882 | INFO | NOUVELLE REQUÊTE [thread: test_anaphore_1] : Et quelle est la température minimale prévue là-bas demain ?
+2026-06-20 15:28:58,882 | INFO | ============================================================
+2026-06-20 15:29:03,801 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_meteo
+2026-06-20 15:29:03,801 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis'}
+2026-06-20 15:29:03,801 | INFO |   OBSERVATION    → Météo actuelle à Tunis, Tunisie :
+- Conditions : Ciel dégagé
+- Température : 34.2°C
+- Humidité : 31%
+- Vent : 18.8 km/h
+2026-06-20 15:29:03,801 | INFO |   THOUGHT/RÉPONSE → Voici la météo actuelle à Tunis, en Tunisie :
+
+🌞 **Conditions** : Ciel dégagé  
+🌡️ **Température** : 34,2°C  
+💧 **Humidité** : 31%  
+💨 **Vent** : 18,8 km/h  
+
+Il fait donc assez chaud avec un ciel bie
+2026-06-20 15:29:03,801 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_prevision_meteo
+2026-06-20 15:29:03,801 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis', 'jours': 2}
+2026-06-20 15:29:03,801 | INFO |   OBSERVATION    → Prévisions météo pour Tunis, Tunisie :
+- 2026-06-20 : Ciel dégagé, min 21.8°C / max 35.7°C
+- 2026-06-21 : Ciel dégagé, min 22.7°C / max 34.4°C
+
+2026-06-20 15:29:03,801 | INFO |   THOUGHT/RÉPONSE → D'après les prévisions météo pour Tunis demain (21 juin 2026), la **température minimale** sera de **22,7°C**.
+
+Le ciel restera dégagé avec une température maximale de 34,4°C. La nuit sera donc relati
+2026-06-20 15:29:03,801 | INFO | RÉPONSE FINALE : D'après les prévisions météo pour Tunis demain (21 juin 2026), la **température minimale** sera de **22,7°C**.
+
+Le ciel restera dégagé avec une température maximale de 34,4°C. La nuit sera donc relativement douce ! 🌙
+2026-06-20 15:29:03,801 | INFO | ============================================================
+
+2026-06-20 15:29:04,046 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:29:04,046 | INFO | ============================================================
+2026-06-20 15:29:04,046 | INFO | NOUVELLE REQUÊTE [thread: conversation_A] : Je m'appelle Sarah.
+2026-06-20 15:29:04,046 | INFO | ============================================================
+2026-06-20 15:29:07,177 | INFO |   THOUGHT/RÉPONSE → Bonjour Sarah ! Enchantée de faire votre connaissance. 😊
+
+Je suis là pour vous aider avec diverses tâches :
+- Rechercher des informations sur internet
+- Consulter des données de l'entreprise (employés
+2026-06-20 15:29:07,177 | INFO | RÉPONSE FINALE : Bonjour Sarah ! Enchantée de faire votre connaissance. 😊
+
+Je suis là pour vous aider avec diverses tâches :
+- Rechercher des informations sur internet
+- Consulter des données de l'entreprise (employés, projets, ventes)
+- Obtenir la météo d'une ville
+- Et bien d'autres choses encore
+
+N'hésitez pas à me poser vos questions, je ferai de mon mieux pour vous aider !
+2026-06-20 15:29:07,177 | INFO | ============================================================
+
+2026-06-20 15:29:07,177 | INFO | ============================================================
+2026-06-20 15:29:07,177 | INFO | NOUVELLE REQUÊTE [thread: conversation_B] : Quel est mon nom ?
+2026-06-20 15:29:07,177 | INFO | ============================================================
+2026-06-20 15:29:09,620 | INFO |   THOUGHT/RÉPONSE → Je n'ai pas accès à des informations sur votre identité personnelle. Je suis un assistant IA et je ne connais pas votre nom à moins que vous me l'ayez mentionné dans notre conversation.
+
+Si vous souha
+2026-06-20 15:29:09,620 | INFO | RÉPONSE FINALE : Je n'ai pas accès à des informations sur votre identité personnelle. Je suis un assistant IA et je ne connais pas votre nom à moins que vous me l'ayez mentionné dans notre conversation.
+
+Si vous souhaitez que je vous appelle par votre nom, n'hésitez pas à me le dire ! 😊
+2026-06-20 15:29:09,620 | INFO | ============================================================
+
+2026-06-20 15:30:46,928 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:30:46,930 | INFO | ============================================================
+2026-06-20 15:30:46,930 | INFO | NOUVELLE REQUÊTE [thread: test_memoire_1] : Mon nom est Yasmine et je travaille chez SMARTOVATE.
+2026-06-20 15:30:46,930 | INFO | ============================================================
+2026-06-20 15:30:50,681 | INFO |   THOUGHT/RÉPONSE → Bonjour Yasmine ! Enchantée de faire votre connaissance. 👋
+
+Je suis ravie de vous assister aujourd'hui. En tant qu'employée de SMARTOVATE, je peux vous aider avec différentes tâches :
+
+- **Information
+2026-06-20 15:30:50,681 | INFO | RÉPONSE FINALE : Bonjour Yasmine ! Enchantée de faire votre connaissance. 👋
+
+Je suis ravie de vous assister aujourd'hui. En tant qu'employée de SMARTOVATE, je peux vous aider avec différentes tâches :
+
+- **Informations sur l'entreprise** : données sur les employés, les projets, les ventes, etc.
+- **Recherches web** : informations récentes et actuelles
+- **Météo** : conditions météorologiques pour n'importe quelle ville
+- Et bien plus encore !
+
+Comment puis-je vous aider aujourd'hui ?
+2026-06-20 15:30:50,681 | INFO | ============================================================
+
+2026-06-20 15:30:50,681 | INFO | ============================================================
+2026-06-20 15:30:50,683 | INFO | NOUVELLE REQUÊTE [thread: test_memoire_1] : Quel est mon nom et où je travaille ?
+2026-06-20 15:30:50,683 | INFO | ============================================================
+2026-06-20 15:30:53,963 | INFO |   THOUGHT/RÉPONSE → Bonjour Yasmine ! Enchantée de faire votre connaissance. 👋
+
+Je suis ravie de vous assister aujourd'hui. En tant qu'employée de SMARTOVATE, je peux vous aider avec différentes tâches :
+
+- **Information
+2026-06-20 15:30:53,963 | INFO |   THOUGHT/RÉPONSE → Votre nom est **Yasmine** et vous travaillez chez **SMARTOVATE**.
+
+C'est l'information que vous m'avez communiquée au début de notre conversation ! 😊
+
+Y a-t-il quelque chose que vous aimeriez savoir s
+2026-06-20 15:30:53,963 | INFO | RÉPONSE FINALE : Votre nom est **Yasmine** et vous travaillez chez **SMARTOVATE**.
+
+C'est l'information que vous m'avez communiquée au début de notre conversation ! 😊
+
+Y a-t-il quelque chose que vous aimeriez savoir sur votre entreprise ou autre chose ?
+2026-06-20 15:30:53,963 | INFO | ============================================================
+
+2026-06-20 15:30:54,210 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:30:54,210 | INFO | ============================================================
+2026-06-20 15:30:54,210 | INFO | NOUVELLE REQUÊTE [thread: test_anaphore_1] : Quelle est la météo à Tunis ?
+2026-06-20 15:30:54,210 | INFO | ============================================================
+2026-06-20 15:30:59,585 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_meteo
+2026-06-20 15:30:59,585 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis'}
+2026-06-20 15:30:59,585 | INFO |   OBSERVATION    → Météo actuelle à Tunis, Tunisie :
+- Conditions : Ciel dégagé
+- Température : 34.1°C
+- Humidité : 32%
+- Vent : 18.6 km/h
+2026-06-20 15:30:59,585 | INFO |   THOUGHT/RÉPONSE → À Tunis, il fait actuellement **beau avec un ciel dégagé** ☀️
+
+Voici les détails :
+- **Température** : 34,1°C
+- **Humidité** : 32%
+- **Vent** : 18,6 km/h
+
+C'est une journée chaude et ensoleillée à Tun
+2026-06-20 15:30:59,585 | INFO | RÉPONSE FINALE : À Tunis, il fait actuellement **beau avec un ciel dégagé** ☀️
+
+Voici les détails :
+- **Température** : 34,1°C
+- **Humidité** : 32%
+- **Vent** : 18,6 km/h
+
+C'est une journée chaude et ensoleillée à Tunis !
+2026-06-20 15:30:59,585 | INFO | ============================================================
+
+2026-06-20 15:30:59,585 | INFO | ============================================================
+2026-06-20 15:30:59,585 | INFO | NOUVELLE REQUÊTE [thread: test_anaphore_1] : Et quelle est la température minimale prévue là-bas demain ?
+2026-06-20 15:30:59,585 | INFO | ============================================================
+2026-06-20 15:31:04,005 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_meteo
+2026-06-20 15:31:04,005 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis'}
+2026-06-20 15:31:04,005 | INFO |   OBSERVATION    → Météo actuelle à Tunis, Tunisie :
+- Conditions : Ciel dégagé
+- Température : 34.1°C
+- Humidité : 32%
+- Vent : 18.6 km/h
+2026-06-20 15:31:04,005 | INFO |   THOUGHT/RÉPONSE → À Tunis, il fait actuellement **beau avec un ciel dégagé** ☀️
+
+Voici les détails :
+- **Température** : 34,1°C
+- **Humidité** : 32%
+- **Vent** : 18,6 km/h
+
+C'est une journée chaude et ensoleillée à Tun
+2026-06-20 15:31:04,005 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_prevision_meteo
+2026-06-20 15:31:04,005 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis', 'jours': 2}
+2026-06-20 15:31:04,005 | INFO |   OBSERVATION    → Prévisions météo pour Tunis, Tunisie :
+- 2026-06-20 : Ciel dégagé, min 21.8°C / max 35.7°C
+- 2026-06-21 : Ciel dégagé, min 22.7°C / max 34.4°C
+
+2026-06-20 15:31:04,005 | INFO |   THOUGHT/RÉPONSE → La température minimale prévue à Tunis **demain (21 juin)** sera de **22,7°C**.
+
+La journée devrait être ensoleillée avec un ciel dégagé et une température maximale atteignant 34,4°C.
+2026-06-20 15:31:04,005 | INFO | RÉPONSE FINALE : La température minimale prévue à Tunis **demain (21 juin)** sera de **22,7°C**.
+
+La journée devrait être ensoleillée avec un ciel dégagé et une température maximale atteignant 34,4°C.
+2026-06-20 15:31:04,005 | INFO | ============================================================
+
+2026-06-20 15:31:04,212 | INFO | Agent créé avec 5 outils et mémoire conversationnelle activée
+2026-06-20 15:31:04,212 | INFO | ============================================================
+2026-06-20 15:31:04,212 | INFO | NOUVELLE REQUÊTE [thread: conversation_A] : Je m'appelle Sarah.
+2026-06-20 15:31:04,212 | INFO | ============================================================
+2026-06-20 15:31:07,825 | INFO |   THOUGHT/RÉPONSE → Bonjour Sarah ! 👋
+
+Enchantée de faire votre connaissance. Je suis une assistante IA polyvalente et je suis là pour vous aider.
+
+Je peux vous aider avec différentes choses :
+- 🌐 Rechercher des informat
+2026-06-20 15:31:07,825 | INFO | RÉPONSE FINALE : Bonjour Sarah ! 👋
+
+Enchantée de faire votre connaissance. Je suis une assistante IA polyvalente et je suis là pour vous aider.
+
+Je peux vous aider avec différentes choses :
+- 🌐 Rechercher des informations récentes sur internet
+- 📊 Consulter des données d'entreprise (employés, projets, ventes)
+- 🌤️ Obtenir la météo et les prévisions pour n'importe quelle ville
+- Et bien d'autres choses !
+
+Comment puis-je vous aider aujourd'hui, Sarah ?
+2026-06-20 15:31:07,825 | INFO | ============================================================
+
+2026-06-20 15:31:07,825 | INFO | ============================================================
+2026-06-20 15:31:07,827 | INFO | NOUVELLE REQUÊTE [thread: conversation_B] : Quel est mon nom ?
+2026-06-20 15:31:07,827 | INFO | ============================================================
+2026-06-20 15:31:10,756 | INFO |   THOUGHT/RÉPONSE → Je n'ai pas accès à des informations personnelles vous concernant, comme votre nom. Je suis un assistant IA qui répond à vos questions en utilisant les outils à ma disposition (recherche web, base de 
+2026-06-20 15:31:10,756 | INFO | RÉPONSE FINALE : Je n'ai pas accès à des informations personnelles vous concernant, comme votre nom. Je suis un assistant IA qui répond à vos questions en utilisant les outils à ma disposition (recherche web, base de données d'entreprise, météo, etc.), mais je ne connais pas votre identité personnelle.
+
+Si vous souhaitez que je vous appelle d'une certaine manière, n'hésitez pas à me le dire ! 😊
+
+Puis-je vous aider avec autre chose ?
+2026-06-20 15:31:10,756 | INFO | ============================================================
+

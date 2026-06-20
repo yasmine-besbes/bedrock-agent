@@ -17,6 +17,7 @@ from tools.search_tool import recherche_web
 from tools.database_tool import interroger_base_de_donnees, executer_sql
 from tools.weather_tool import obtenir_meteo, obtenir_prevision_meteo
 
+from langgraph.checkpoint.memory import InMemorySaver
 
 
 # ════════════════════════════════════════════════════
@@ -71,7 +72,7 @@ RÈGLES DE RAISONNEMENT :
 
 
 def create_main_agent():
-    """Crée et retourne l'agent principal avec tous les outils."""
+    """Crée et retourne l'agent principal avec tous les outils + mémoire conversationnelle."""
 
     llm = ChatBedrock(
         model_id=MODEL_ID,
@@ -88,16 +89,22 @@ def create_main_agent():
         executer_sql,
         obtenir_meteo,
         obtenir_prevision_meteo,
-        
     ]
+
+    # ─── Mémoire conversationnelle ───
+    memory = InMemorySaver()
 
     agent = create_agent(
         model=llm,
         tools=tools,
-        system_prompt=SYSTEM_PROMPT
+        system_prompt=SYSTEM_PROMPT,
+        checkpointer=memory
     )
 
-    logger.info(f"Agent créé avec {len(tools)} outils disponibles")
+    logger.info(
+        f"Agent créé avec {len(tools)} outils et mémoire conversationnelle activée"
+    )
+
     return agent
 
 
@@ -124,22 +131,23 @@ def log_etapes_raisonnement(messages):
             logger.info(f"  OBSERVATION    → {contenu[:200]}")
 
 
-def executer_requete(agent, question: str) -> str:
+def executer_requete(agent, question: str, thread_id: str = "default") -> str:
     """
-    Exécute une requête sur l'agent et logue toutes les étapes
-    de raisonnement (Thought, Action, Observation).
+    Exécute une requête sur l'agent en conservant la mémoire de la conversation.
+    Le thread_id identifie une conversation unique (ex: un utilisateur ou une session).
     """
     logger.info("=" * 60)
-    logger.info(f"NOUVELLE REQUÊTE : {question}")
+    logger.info(f"NOUVELLE REQUÊTE [thread: {thread_id}] : {question}")
     logger.info("=" * 60)
 
-    resultat = agent.invoke({
-        "messages": [HumanMessage(content=question)]
-    })
+    config = {"configurable": {"thread_id": thread_id}}
+
+    resultat = agent.invoke(
+        {"messages": [HumanMessage(content=question)]},
+        config=config
+    )
 
     messages = resultat["messages"]
-
-    # Logue toutes les étapes de raisonnement
     log_etapes_raisonnement(messages)
 
     reponse_finale = messages[-1].content
@@ -153,8 +161,11 @@ def executer_requete(agent, question: str) -> str:
 if __name__ == "__main__":
     agent = create_main_agent()
 
-    question = "Quelle est la météo à Tunis et combien d'employés travaillent dans le département Tech ?"
-    reponse = executer_requete(agent, question)
+    # Démonstration de la mémoire conversationnelle
+    print("\n--- Tour 1 ---")
+    reponse1 = executer_requete(agent, "Quel est le cours de l'action Apple ?", thread_id="demo")
+    print(reponse1)
 
-    print("\n--- RÉPONSE FINALE ---")
-    print(reponse)
+    print("\n--- Tour 2 (référence implicite : 'son prix') ---")
+    reponse2 = executer_requete(agent, "Et quel est son volume d'échange ?", thread_id="demo")
+    print(reponse2)
