@@ -1,0 +1,34 @@
+2026-06-20 15:12:41,551 | INFO | Agent créé avec 5 outils disponibles
+2026-06-20 15:12:41,807 | INFO | Agent créé avec 5 outils disponibles
+2026-06-20 15:13:08,320 | INFO | Agent créé avec 5 outils disponibles
+2026-06-20 15:13:08,320 | INFO | ============================================================
+2026-06-20 15:13:08,320 | INFO | NOUVELLE REQUÊTE : Quelle est la météo actuelle à Tunis ?
+2026-06-20 15:13:08,320 | INFO | ============================================================
+2026-06-20 15:13:15,514 | INFO |   THOUGHT/ACTION → Outil appelé : obtenir_meteo
+2026-06-20 15:13:15,514 | INFO |   ACTION INPUT   → Paramètres : {'ville': 'Tunis'}
+2026-06-20 15:13:15,514 | INFO |   OBSERVATION    → Météo actuelle à Tunis, Tunisie :
+- Conditions : Ciel dégagé
+- Température : 34.3°C
+- Humidité : 30%
+- Vent : 18.7 km/h
+2026-06-20 15:13:15,514 | INFO |   THOUGHT/RÉPONSE → **Météo actuelle à Tunis :**
+
+À Tunis en Tunisie, il fait actuellement **34,3°C** avec un **ciel dégagé**. 
+
+- 🌡️ **Température** : 34,3°C
+- ☀️ **Conditions** : Ciel dégagé
+- 💧 **Humidité** : 30%
+- 🌬️
+2026-06-20 15:13:15,514 | INFO | RÉPONSE FINALE : **Météo actuelle à Tunis :**
+
+À Tunis en Tunisie, il fait actuellement **34,3°C** avec un **ciel dégagé**. 
+
+- 🌡️ **Température** : 34,3°C
+- ☀️ **Conditions** : Ciel dégagé
+- 💧 **Humidité** : 30%
+- 🌬️ **Vent** : 18,7 km/h
+
+Il fait donc assez chaud avec un temps ensoleillé et une faible humidité.
+2026-06-20 15:13:15,514 | INFO | ============================================================
+
+2026-06-20 15:13:15,808 | INFO | Agent créé avec 5 outils disponibles

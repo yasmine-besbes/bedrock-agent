@@ -1,5 +1,5 @@
 from langchain_aws import ChatBedrock
-from langgraph.prebuilt import create_react_agent
+from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage
 from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
@@ -79,11 +79,11 @@ tu DOIS utiliser l'outil de recherche web pour trouver des informations à jour.
 Ne réponds jamais de mémoire pour les questions d'actualité."""
 
     # Création de l'agent LangGraph 1.x
-    agent = create_react_agent(
-        model=llm,
-        tools=tools,
-        prompt=system_prompt
-    )
+    agent = create_agent(
+    model=llm,
+    tools=tools,
+    system_prompt=system_prompt
+)
 
     question = "Quelles sont les dernières actualités sur l'intelligence artificielle en 2025 ?"
     print(f"\nQuestion posée à l'agent : {question}\n")
