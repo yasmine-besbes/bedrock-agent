@@ -39,3 +39,6 @@ GEOCODING_API_URL = "https://geocoding-api.open-meteo.com/v1/search"
 
 # DynamoDB - Mémoire long terme
 DYNAMODB_TABLE_NAME = "agent_conversations"
+
+# DynamoDB - Historique des conversations (affichage UI)
+CHAT_HISTORY_TABLE_NAME = "agent_chat_history"
