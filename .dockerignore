@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git/
+.gitignore
+logs/*.log
+data/entreprise.db
+README.md
+node_modules/
